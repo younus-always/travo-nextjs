@@ -4,8 +4,8 @@ import Navbar from "./Navbar"
 const ResponsiveNav = () => {
       return (
             <div>
-                  <Navbar/>
-                  <MobileNav/>
+                  <Navbar />
+                  <MobileNav />
             </div>
       )
 }

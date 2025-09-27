@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono, Poppins } from "next/font/google";
 import "./globals.css";
-import ResponsiveNav from "./components/Home/Navber/ResponsiveNav";
+import ResponsiveNav from "@/components/Home/Navber/ResponsiveNav";
+
 
 const poppins = Poppins({
   weight: ["100", "200", "300", "400", "500", "600", "700"],
@@ -28,7 +29,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${poppins.className} antialiased`}
       >
-        <ResponsiveNav/>
+        <ResponsiveNav />
         {children}
       </body>
     </html>
