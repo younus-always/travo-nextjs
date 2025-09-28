@@ -1,10 +1,11 @@
 import { navLinks } from "@/constant/constant";
 import Link from "next/link";
 import { TbAirBalloon } from "react-icons/tb";
+import { HiBars3BottomRight } from "react-icons/hi2";
 
-const Navbar = () => {
+const Navbar = ({ openNav }) => {
       return (
-            <div className="bg-blue-900 transition-all duration-200 ease-in-out h-[16vh] z-50">
+            <div className="bg-blue-900 transition-all duration-200 ease-in-out h-[12vh] fixed w-full z-40">
                   <div className="flex items-center justify-between h-full w-11/12 xl:w-10/12 mx-auto">
                         {/* Logo */}
                         <div className="flex items-center space-x-2">
@@ -17,8 +18,17 @@ const Navbar = () => {
                         <div className="hidden lg:flex items-center space-x-8 text-white font-medium text-base">
                               {navLinks.map((link) =>
                                     <Link key={link.id} href={link.url}>
-                                          <p className="w-fit relative block after:block after:content-[''] after:absolute after:h-1 after:bg-yellow-300 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition duration-200 after:origin-right">{link.label}</p>
+                                          <span className="relative block w-fit  after:block after:content-[''] after:absolute after:-bottom-1 after:left-0  after:h-[3px] after:w-full after:bg-yellow-300 after:rounded-xl after:origin-center after:scale-x-0 after:transition-transform after:duration-200 hover:after:scale-x-100">
+                                                {link.label}
+                                          </span>
+
                                     </Link>)}
+                        </div>
+                        {/* Button */}
+                        <div className="flex items-center space-x-4">
+                              <button className="py-2 px-8 md:px-12 md:py-2.5 bg-white text-black font-medium rounded-lg hover:bg-gray-200 transition duration-200 cursor-pointer">Book Now</button>
+                              {/* Responsive menu */}
+                              <HiBars3BottomRight onClick={openNav} className="w-8 h-8 text-white cursor-pointer lg:hidden" />
                         </div>
                   </div>
             </div >
